@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block tittle %}
+    TESTING PAGE
+ {% endblock %}
+
+{% block content %}
+
+
+    {{ products.Название_Товара }}
+
+    <br>
+    {% for a in Gallery.objects.all %}
+
+
+
+    <img src='{{ MEDIA_URL }}{{ products.image.url }}'>
+    {% endfor %}
+    <br>
+
+    {{ products.Описание_Товара }}
+
+
+{% endblock %}
