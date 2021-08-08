@@ -12,8 +12,12 @@ def product_id(request, product_id):
     except:
         raise Http404("Страница не найдена!")
     return render(request, 'products/product.html', {'products': a})
+
+
 def home(request):
-    return render(request, 'home.html')
+    products = Product.objects.all()
+    return render(request, 'home.html', context={'products': products})
+
 
 def about(request):
     return render(request, 'about/about.html')

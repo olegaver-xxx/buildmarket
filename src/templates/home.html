@@ -5,7 +5,15 @@
     <title></title>
 </head>
 <body>
-SUCESS
-{{ products.Название_Товара }}
+<h1>Products</h1>
+    <dl>
+{% for product in products %}
+    <dt>{{ product }}</dt>
+        <dd>{{ product.description}}</dd>
+    <img src="{{ product.image.url }}" alt="" width="300">
+    <hr>
+{% endfor %}
+    </dl>
+
 </body>
 </html>

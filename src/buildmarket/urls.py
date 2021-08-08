@@ -7,8 +7,13 @@ from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT),
     path('products/', include("products.urls")),
     path('about/', views.about, name="about"),
     path('', views.home, name="home"),
 ]
+urlpatterns.extend(
+    static(settings.STATIC_URL, document_root=settings.STATIC_ROOT),
+)
+urlpatterns.extend(
+    static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+   )
