@@ -6,19 +6,14 @@
 
 {% block content %}
 
-
-    {{ products.Название_Товара }}
-
+    <h1>{{ product }}</h1>
     <br>
-    {% for a in Gallery.objects.all %}
-
-
-
-    <img src='{{ MEDIA_URL }}{{ products.image.url }}'>
+    {% for img in product.images.all %}
+        <img src='{{ img.image.url }}' width="200">
     {% endfor %}
     <br>
+    <p>{{ product.description }}</p>
 
-    {{ products.Описание_Товара }}
 
 
 {% endblock %}
